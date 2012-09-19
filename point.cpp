@@ -1,3 +1,8 @@
+// Point.cpp, a class for storing basic 3-dimensional (X,Y,Z) coordinates in double precision,
+// providing basic arithmetic operators
+// jweid 9/19/2012 
+
+
 class Point {
 
 	double x, y, z;
