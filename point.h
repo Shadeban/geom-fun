@@ -12,7 +12,7 @@ class Point {
 		double getY(void) const;
 		double getZ(void) const;
 		double dot(const Point& rhs) const;
-		Point cross(Point& rhs) const;
+		Point cross(const Point& rhs) const;
 };
 
 inline Point operator+(const Point& lhs, const Point& rhs){
