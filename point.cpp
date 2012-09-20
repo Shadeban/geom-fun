@@ -1,50 +1,31 @@
 // Point.cpp, a class for storing basic 3-dimensional (X,Y,Z) coordinates in double precision,
 // providing basic arithmetic operators
 // jweid 9/19/2012 
+#include "point.h"
 
 
-class Point {
 
-	double x, y, z;
-
-	public:
-		Point(double inx, double iny, double inz){
-			x = inx;
-			y = iny;
-			z = inz;
-		}
-
-		double getX(void) const{
-			return x;
-		}
-		double getY(void) const{
-			return y;
-		}
-		double getZ(void) const{
-			return z;
-		}
-		double dot(const Point& rhs) const{
-			return x*rhs.getX() + y * rhs.getY() + z * rhs.getZ();
-		}
-		Point cross(Point& rhs) const{
-			return Point(y*rhs.getZ() - rhs.getY() * z,\
-				     z*rhs.getX() - rhs.getZ() * x,\
-				     x * rhs.getY() - rhs.getX() * y);
-		}
-};
-inline Point operator+(const Point& lhs, const Point& rhs){
-	return Point(lhs.getX() + rhs.getX(), lhs.getY() + rhs.getY(), lhs.getZ() + rhs.getZ());	
+Point::Point(double inx, double iny, double inz){
+	x = inx;
+	y = iny;
+	z = inz;
 }
-inline Point operator*(const Point& lhs, const double& rhs){
-	return Point(lhs.getX() * rhs, lhs.getY() * rhs, lhs.getZ() * rhs);
+
+double Point::getX(void) const{
+	return x;
 }
-inline Point operator*(const double& lhs, const Point& rhs){
-	return rhs * lhs;
+double Point::getY(void) const{
+	return y;
 }
-inline Point operator-(const Point& lhs, const Point& rhs){
-	return lhs + (rhs * -1);
+double Point::getZ(void) const{
+	return z;
 }
-inline Point operator/(const Point& lhs, const double& rhs){
-	return lhs * (1.0 / rhs);
+double Point::dot(const Point& rhs) const{
+	return x*rhs.getX() + y * rhs.getY() + z * rhs.getZ();
+}
+Point Point::cross(Point& rhs) const{
+	return Point(y*rhs.getZ() - rhs.getY() * z,\
+			z*rhs.getX() - rhs.getZ() * x,\
+			x * rhs.getY() - rhs.getX() * y);
 }
 
