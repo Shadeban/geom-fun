@@ -10,6 +10,9 @@ class Point {
 		double getX(void) const;
 		double getY(void) const;
 		double getZ(void) const;
+		Point* setX(double);
+		Point* setY(double);
+		Point* setZ(double);
 		double dot(const Point& rhs) const;
 		Point cross(const Point& rhs) const;
 };

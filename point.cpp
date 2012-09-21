@@ -20,6 +20,19 @@ double Point::getY(void) const{
 double Point::getZ(void) const{
 	return z;
 }
+Point* Point::setX(double inX){
+	x = inX;
+	return this;
+}
+Point* Point::setY(double inY){
+	y = inY;
+	return this;
+}
+Point* Point::setZ(double inZ){
+	z = inZ;
+	return this;
+}
+
 double Point::dot(const Point& rhs) const{
 	return x*rhs.getX() + y * rhs.getY() + z * rhs.getZ();
 }

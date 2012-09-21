@@ -13,11 +13,11 @@ Ray::~Ray(){
 	delete dir;
 	delete origin;
 }
-Point Ray::getOrigin(void) const {
-	return *origin;
+Point* Ray::getOrigin(void) const {
+	return origin;
 }	
-Point Ray::getDir(void) const {
-	return *dir;
+Point* Ray::getDir(void) const {
+	return dir;
 }
 Point Ray::calcPoint(double t) const {
 	return *origin + (t * *dir);
