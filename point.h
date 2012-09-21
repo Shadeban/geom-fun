@@ -6,7 +6,6 @@ class Point {
 
 	public:
 		Point(double inx, double iny, double inz);
-		
 
 		double getX(void) const;
 		double getY(void) const;

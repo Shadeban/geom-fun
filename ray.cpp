@@ -7,7 +7,7 @@
 Ray::Ray(const Point& origin, const Point& dir) {
 	this->origin = new Point(origin.getX(), origin.getY(), origin.getZ()); 
 	Point newDir = dir / std::sqrt(dir.dot(dir));
-	this->dir = new Point(newDir.getX(), newDir.getY(), newDir.getZ());
+	this->dir = new Point(newDir);
 }
 Ray::~Ray(){
 	delete dir;
