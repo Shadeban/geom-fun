@@ -2,13 +2,11 @@
 #define GFTRIANGLE_H	
 #include "ray.h"
 class Triangle {
-	Point** points;
-	Point* norm;	
 	public:
+	Point** vertex;
+	Point* norm;	
 	Triangle(const Point& v0, const Point& v1, const Point& v2);
 	~Triangle(void);
-	Point getVertex(int) const;
-	Point getNorm(void) const;
 	
 };
 

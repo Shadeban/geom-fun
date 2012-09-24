@@ -33,12 +33,4 @@ Point* Point::setZ(double inZ){
 	return this;
 }
 
-double Point::dot(const Point& rhs) const{
-	return x*rhs.getX() + y * rhs.getY() + z * rhs.getZ();
-}
-Point Point::cross(const Point& rhs) const{
-	return Point(y*rhs.getZ() - rhs.getY() * z,\
-			z*rhs.getX() - rhs.getZ() * x,\
-			x * rhs.getY() - rhs.getX() * y);
-}
 
