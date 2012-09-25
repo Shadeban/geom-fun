@@ -1,6 +1,6 @@
 #ifndef GFTRIANGLE_H
 #define GFTRIANGLE_H	
-#include "ray.h"
+#include "point.h"
 class Triangle {
 	public:
 	Point** vertex;

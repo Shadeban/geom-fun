@@ -3,7 +3,7 @@
 //jweid 9/19/2012
 #include "ray.h"
 #include <cmath>
-
+#include <iostream>
 Ray::Ray(const Point& origin, const Point& dir) {
 	this->origin = new Point(origin.getX(), origin.getY(), origin.getZ()); 
 	Point newDir = dir / std::sqrt(dir.dot(dir));
@@ -22,9 +22,7 @@ Point* Ray::getDir(void) const {
 Point Ray::calcPoint(double t) const {
 	return *origin + (t * *dir);
 }
-//int main(int argv, char** argc){
-//	cout << sizeof(Ray) << endl;
-//	Ray ray(Point(0,0,0), Point(1,1,1));
-//	cout << ray.getDir().getX() << endl;
-//	return 0;
-//}
+using namespace std;
+int main(int argv, char** argc){
+	return 0;
+}
