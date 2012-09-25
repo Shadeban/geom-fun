@@ -13,3 +13,7 @@ Camera::Camera(double fovX, int width, int height){
 	
 
 }
+
+Ray Camera::rayAt(int screenX, int screenY) const {
+	return Ray(Point(0,0,0), Point(botLeftX + screenX * deltaX, botLeftY + (height - screenY) * deltaY, -1));
+}

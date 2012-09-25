@@ -1,5 +1,6 @@
 #ifndef GFCAMERA_H
 #define GFCAMERA_H
+#include "ray.h"
 
 class Camera{
 	public:
@@ -10,7 +11,7 @@ class Camera{
 		double botLeftX;
 		double botLeftY;	
 		Camera(double , int , int );
-
+		Ray rayAt(int, int) const;
 
 };
 
