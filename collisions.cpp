@@ -1,5 +1,7 @@
 #include "collisions.h"
+#include <cmath>
 
+using namespace std;
 
 bool collides(const Ray& ray, const Triangle& triangle, Point* intersection){
 	bool intersectsPlane = collides(ray, *triangle.vertex[0], *triangle.norm, intersection);
@@ -42,4 +44,18 @@ bool collides(const Ray& ray, const Point& planePoint, const Point& planeNorm, P
 		return true;	
 	}	
 	return false;
+}
+
+bool collides(const Ray& ray, const Sphere& sphere, Point* intersect){
+	double a = ray.getDir()->dot(*ray.getDir());
+	Point originDiff = *ray.getOrigin() - *sphere.center;
+	double b = originDiff.dot(*ray.getDir()) * 2;
+	double c = originDiff.dot(originDiff) - sphere.radius * sphere.radius;
+	double hypotenuse = b * b - 4 * a * c;
+	if(hypotenuse < 0) {return false;}
+	double root = sqrt(hypotenuse);
+	double t = (-1 * b - root) / (2 * a);
+	if(t < 0) {t = (-1 * b + root) / (2 * a);}
+	*intersect = ray.calcPoint(t);
+	return true;	
 }
